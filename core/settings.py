@@ -74,13 +74,30 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+} """
 
+""" host: "162.240.215.202", //Se declara el host de la bd
+  user: "jeerel_userRoot", //Obtenemos el usuario al que se conectara
+  password: "XML7E&)f@zx)", //Obtiene el password
+  database: "jeerel_librodetodomexico" //Se hace la referencia al bd """
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': "162.240.215.202",  # Se declara el host de la bd
+        'USER': "jeerel_userRoot",  # Obtenemos el usuario al que se conectara
+        'PASSWORD': "XML7E&)f@zx)",  # Obtiene el password
+        'NAME': 'jeerel_dogs',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES '"
+        }
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
