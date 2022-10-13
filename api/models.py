@@ -9,6 +9,7 @@ class Dog(models.Model):
     name = models.CharField(max_length=30, blank=True)
     day_birth = models.DateField()
     #price = models.FloatField(validators=[price_regex])
+    id_image_drive = models.CharField(max_length=60)
     price = models.FloatField()
     color = models.CharField(max_length=30)
     male = models.BooleanField()
