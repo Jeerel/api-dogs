@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'api'
 ]
 
@@ -53,8 +54,22 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # heroku
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # cors
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost',
+    'http://localhost:3000',
+    'http://localhost:4200',
+    'https://561-d-french-cartel.vercel.app',
+    'https://561-d-french-cartel-git-main-jeerel.vercel.app',
+    'https://561-d-french-cartel-jeerel.vercel.app',
+    'https://561-d-french-cartel.vercel.app:3000',
+    'https://561-d-french-cartel-git-main-jeerel.vercel.app:3000',
+    'https://561-d-french-cartel-jeerel.vercel.app:3000',
+)
 
 ROOT_URLCONF = 'core.urls'
 
